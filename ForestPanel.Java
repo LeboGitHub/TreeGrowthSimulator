@@ -1,8 +1,10 @@
-package treeGrow;
 
 import java.awt.Color;
 import java.util.Random;
 import java.awt.Graphics;
+
+import javax.swing.JButton;
+import javax.swing.JLabel;
 import javax.swing.JPanel;
 import java.util.*;
 
@@ -10,7 +12,6 @@ import java.util.*;
 public class ForestPanel extends JPanel implements Runnable {
 	Tree[] forest;	// trees to render
 	List<Integer> rndorder; // permutation of tree indices so that rendering is less structured
-	
 	ForestPanel(Tree[] trees) {
 		forest=trees;
 	}
@@ -55,6 +56,7 @@ public class ForestPanel extends JPanel implements Runnable {
 		// render loop
 		while(true) {
 			repaint();
+			//piantComponent(getGraphics());
 			try {
 				Thread.sleep(20); 
 			} catch (InterruptedException e) {
