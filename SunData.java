@@ -1,4 +1,3 @@
-package treeGrow;
 
 import java.io.File;
 import java.io.IOException;
@@ -9,8 +8,8 @@ import java.io.PrintWriter;
 // Trees define a canopy which covers a square area of the landscape
 public class SunData{
 	
-	Land sunmap; // regular grid with average daily sunlight stored at each grid point
-	Tree [] trees; // array of individual tress located on the sunmap	
+	volatile Land sunmap; // regular grid with average daily sunlight stored at each grid point
+	volatile static Tree [] trees; // array of individual tress located on the sunmap	
 	
 	// read in sun exposure and tree data from file
 	void readData(String fileName){ 
